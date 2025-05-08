@@ -8,7 +8,7 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: 'index.html', // SPA routing for GitHub Pages
+			fallback: '404.html', // SPA routing for GitHub Pages (per official docs)
 			precompress: false
 		}),
 		paths: {
