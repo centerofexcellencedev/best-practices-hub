@@ -72,4 +72,524 @@
   section: 1
   instruction: "List concrete steps for automating infrastructure, CI/CD, scaling, and monitoring in cloud-native systems, and explain why this drives reliability and agility."
 
-# ... (truncated for brevity; would continue with the full file content)
+- id: "documentation-01"
+  title: "Write for Your Audience"
+  description: "Identify your target audience (developers, users, business stakeholders, etc.) and tailor documentation to their needs and technical level. Use clear, concise language and avoid unnecessary jargon. Provide context and explain 'why' as well as 'how.'"
+  tags: ["documentation", "communication", "audience"]
+  area: "Documentation"
+  sources:
+    - title: "Google Technical Writing, 'Audience and Purpose'"
+      url: "https://developers.google.com/tech-writing"
+  file: "BestPractices_Documentation_2025.md"
+  section: 1
+  instruction: "Show how to write documentation tailored to the audience, using clear language and providing context and rationale."
+
+- id: "testing-01"
+  title: "Test Early, Test Often (Shift Left)"
+  description: "Integrate testing activities as early as possible in the software development lifecycle (SDLC). Use test-driven development (TDD) and behavior-driven development (BDD) to ensure code quality and clarify requirements from the start. Continuously run tests as part of CI/CD pipelines to catch regressions early."
+  tags: ["testing", "shift-left", "tdd", "bdd", "ci/cd"]
+  area: "Testing"
+  sources:
+    - title: "Google Testing Blog, 'The Importance of Early Testing'"
+      url: "https://testing.googleblog.com/"
+  file: "BestPractices_Testing_2025.md"
+  section: 1
+  instruction: "Explain the importance of integrating testing early in the SDLC, using TDD/BDD, and running tests continuously in CI/CD pipelines."
+
+- id: "security-01"
+  title: "Practice Defense in Depth"
+  description: "Apply authentication between all components, not just at the perimeter (zero-trust networking). Minimize trust between components, implement rate limiting, and protect against injection and other attacks at every layer. Each component should defend itself from others, making the system resilient and cloud-ready."
+  tags: ["security", "defense-in-depth", "cloud-native", "zero-trust"]
+  area: "Security"
+  sources:
+    - title: "Google Cloud, '5 principles for cloud-native architecture'"
+      url: "https://cloud.google.com/blog/products/application-development/5-principles-for-cloud-native-architecture-what-it-is-and-how-to-master-it"
+  file: "BestPractices_CloudNative_2025.md"
+  section: 4
+  instruction: "Describe how to implement defense in depth, including zero-trust networking, minimizing trust between components, and multi-layered security controls."
+
+- id: "documentation-02"
+  title: "Use Structured, Modular Documentation"
+  description: "Organize documentation into logical sections (e.g., Overview, Getting Started, How-to Guides, Reference, FAQ). Use modular topics that can be reused and linked across documents (topic-based authoring). Provide navigation aids such as tables of contents, indexes, and cross-references."
+  tags: ["documentation", "structure", "modularity"]
+  area: "Documentation"
+  sources:
+    - title: "Write the Docs, 'Documentation Structure'"
+      url: "https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/"
+  file: "BestPractices_Documentation_2025.md"
+  section: 2
+  instruction: "Explain how to organize documentation into logical, modular sections with navigation aids and topic-based authoring."
+
+- id: "testing-02"
+  title: "Comprehensive Test Pyramid"
+  description: "Structure your test suite as a pyramid: prioritize fast, reliable unit tests at the base, then integration tests, with a smaller number of slow end-to-end (E2E) tests at the top. Avoid over-reliance on brittle E2E tests; focus on automating as many unit and integration tests as possible."
+  tags: ["testing", "test-pyramid", "unit-testing", "integration-testing", "e2e"]
+  area: "Testing"
+  sources:
+    - title: "Martin Fowler, 'Test Pyramid'"
+      url: "https://martinfowler.com/bliki/TestPyramid.html"
+  file: "BestPractices_Testing_2025.md"
+  section: 2
+  instruction: "Describe the test pyramid and how to prioritize unit, integration, and E2E tests for effective, maintainable test suites."
+
+- id: "devex-01"
+  title: "Optimize Developer Experience (DevEx)"
+  description: "Continuously improve tooling, documentation, onboarding, and feedback loops to reduce friction and cognitive load for developers. Invest in internal platforms, self-service, and automation to empower teams."
+  tags: ["devex", "developer-experience", "tooling", "automation"]
+  area: "Developer Experience"
+  sources:
+    - title: "Google Engineering Productivity, 'Developer Experience'"
+      url: "https://developers.google.com/eng-practices"
+    - title: "Platform Engineering Community, 'Platform as a Product'"
+      url: "https://platformengineering.org/blog/platform-as-a-product"
+  file: "BestPractices_DevEx_2025.md"
+  section: 1
+  instruction: "List ways to improve developer experience, including better tooling, onboarding, documentation, and feedback loops, and explain the impact on productivity."
+
+- id: "aiml-01"
+  title: "MLOps and CI/CD for ML"
+  description: "Apply CI/CD principles to machine learning workflows: automate data validation, model testing, and deployment. Use pipeline orchestration tools (e.g., Kubeflow, MLflow) for reproducibility, traceability, and monitoring of models in production."
+  tags: ["ai/ml", "mlops", "ci/cd", "automation"]
+  area: "AI/ML Engineering"
+  sources:
+    - title: "Google Cloud, 'MLOps Best Practices'"
+      url: "https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning"
+    - title: "Microsoft, 'MLOps Principles'"
+      url: "https://learn.microsoft.com/en-us/azure/architecture/example-scenario/mlops/mlops-technical-paper"
+  file: "BestPractices_AIML_2025.md"
+  section: 1
+  instruction: "Explain how to apply CI/CD principles to machine learning workflows, including automation, pipeline orchestration, and monitoring of models."
+
+- id: "opensource-01"
+  title: "Open Source Governance and Community Health"
+  description: "Establish clear contribution guidelines, code of conduct, and governance policies for open source projects. Foster inclusive, healthy communities and maintain transparency in decision-making."
+  tags: ["open-source", "governance", "community"]
+  area: "Open Source"
+  sources:
+    - title: "Open Source Initiative, 'Best Practices for Open Source Projects'"
+      url: "https://opensource.org/docs/osd"
+    - title: "GitHub Docs, 'Building Community Documentation'"
+      url: "https://docs.github.com/en/communities"
+  file: "BestPractices_OpenSource_2025.md"
+  section: 1
+  instruction: "Describe how to establish open source governance, clear contribution guidelines, and foster healthy, inclusive communities."
+
+- id: "testing-03"
+  title: "Maintainable and Isolated Tests"
+  description: "Write tests that are deterministic, repeatable, and independent of each other. Avoid dependencies on external systems in unit tests by using mocks, stubs, or fakes. Keep test data and setup code clear and maintainable."
+  tags: ["testing", "unit-testing", "test-maintainability", "test-isolation"]
+  area: "Testing"
+  sources:
+    - title: "Google Testing Blog, 'Test Flakiness and Isolation'"
+      url: "https://testing.googleblog.com/"
+  file: "BestPractices_Testing_2025.md"
+  section: 3
+  instruction: "Show how to write maintainable, isolated tests using mocks and stubs, and keep test data and setup clear and repeatable."
+
+- id: "documentation-03"
+  title: "Keep Documentation Up to Date"
+  description: "Integrate documentation updates into the development workflow ('docs as code'). Use version control for documentation and review changes through code review processes. Regularly audit and remove outdated content; mark deprecated features clearly."
+  tags: ["documentation", "docs-as-code", "version-control", "maintenance"]
+  area: "Documentation"
+  sources:
+    - title: "Microsoft Docs, 'Docs as Code'"
+      url: "https://docs.microsoft.com/en-us/contribute/"
+  file: "BestPractices_Documentation_2025.md"
+  section: 3
+  instruction: "Explain how to keep documentation up to date, integrate updates into development workflow, and regularly audit for outdated content."
+
+- id: "cloudnative-02"
+  title: "Be Smart with State"
+  description: "Design components to be stateless whenever possible for easier scaling, repair, rollback, and load balancing. For stateful needs, separate state management and use managed services or distributed data stores."
+  tags: ["cloud-native", "stateless", "state-management", "scalability"]
+  area: "Cloud Native"
+  sources:
+    - title: "Google Cloud, '5 principles for cloud-native architecture'"
+      url: "https://cloud.google.com/blog/products/application-development/5-principles-for-cloud-native-architecture-what-it-is-and-how-to-master-it"
+  file: "BestPractices_CloudNative_2025.md"
+  section: 2
+  instruction: "Describe how to design stateless components for easier scaling and use managed services for stateful needs."
+
+- id: "platform-02"
+  title: "Self-Service and Golden Paths"
+  description: "Provide self-service capabilities (e.g., environment provisioning, CI/CD, database access) to empower teams and reduce bottlenecks. Define and document 'golden paths'—opinionated, supported workflows for common use cases. Automate guardrails, compliance, and best practices to ensure consistency and safety."
+  tags: ["platform", "self-service", "golden-paths", "automation"]
+  area: "Platform Engineering"
+  sources:
+    - title: "Spotify, 'Golden Path and Backstage'"
+      url: "https://backstage.io/blog/2020/09/22/why-we-built-backstage"
+  file: "BestPractices_PlatformEngineering_2025.md"
+  section: 2
+  instruction: "List steps to provide self-service capabilities, define golden paths, and automate guardrails and compliance for platform engineering."
+
+- id: "systemintegration-02"
+  title: "API-First and Contract-Driven Integration"
+  description: "Design integrations around well-documented, versioned APIs and service contracts. Use OpenAPI, GraphQL, or AsyncAPI specifications for clarity and validation. Enable parallel development and reduce integration risk with mocks and contract testing."
+  tags: ["integration", "api-first", "contract-testing", "parallel-development"]
+  area: "System Integration"
+  sources:
+    - title: "OpenAPI Initiative, 'API-First Integration'"
+      url: "https://www.openapis.org/"
+  file: "BestPractices_SystemIntegration_2025.md"
+  section: 2
+  instruction: "Explain how to design integrations around well-documented APIs and contracts, using OpenAPI or similar specs, and enable contract testing."
+
+- id: "architecture-02"
+  title: "Modular, Loosely Coupled System Design"
+  description: "Favor modular architectures (e.g., microservices, modular monoliths) to enable independent development, testing, and deployment. Use well-defined interfaces and contracts to minimize coupling between components. Apply the Single Responsibility Principle (SRP) and Separation of Concerns (SoC)."
+  tags: ["architecture", "modularity", "microservices", "srp", "soc"]
+  area: "Architecture"
+  sources:
+    - title: "Martin Fowler, 'Microservices'"
+      url: "https://martinfowler.com/articles/microservices.html"
+  file: "BestPractices_Architecture_2025.md"
+  section: 2
+  instruction: "Describe how to design modular, loosely coupled systems using well-defined interfaces and the principles of SRP and SoC."
+
+- id: "devops-02"
+  title: "CI/CD Pipeline Design and Automation"
+  description: "Automate build, test, and deployment processes to ensure fast, reliable delivery of software. Use pipeline as code (e.g., Jenkinsfile, GitHub Actions, GitLab CI) for repeatability and versioning. Ensure pipelines are modular, maintainable, and support rollback and recovery."
+  tags: ["devops", "ci/cd", "automation", "pipeline"]
+  area: "DevOps / CI/CD"
+  sources:
+    - title: "ThoughtWorks, 'Continuous Delivery'"
+      url: "https://www.thoughtworks.com/continuous-delivery"
+  file: "BestPractices_DevOps_CICD_2025.md"
+  section: 2
+  instruction: "Explain how to automate build, test, and deployment processes, using pipeline as code, and ensure pipelines are modular and maintainable."
+
+- id: "sre-02"
+  title: "Service Level Objectives (SLOs), SLIs, and Error Budgets"
+  description: "Define clear Service Level Indicators (SLIs) and Service Level Objectives (SLOs) for critical services. Use error budgets to balance reliability with velocity and innovation. Regularly review and adjust SLOs in partnership with business stakeholders."
+  tags: ["sre", "slo", "error-budget", "reliability"]
+  area: "SRE"
+  sources:
+    - title: "Google SRE Book, 'Service Level Objectives'"
+      url: "https://sre.google/sre-book/service-level-objectives/"
+  file: "BestPractices_SRE_2025.md"
+  section: 2
+  instruction: "Describe how to define SLOs, SLIs, and error budgets, and regularly review them with business stakeholders."
+
+- id: "cloudnative-03"
+  title: "Favor Managed Services"
+  description: "Prefer managed services (e.g., Cloud SQL, BigQuery) to reduce operational overhead and risk. Consider portability, operational savings, and strategic significance when evaluating managed services vs. self-hosted alternatives."
+  tags: ["cloud-native", "managed-services", "portability", "cloud"]
+  area: "Cloud Native"
+  sources:
+    - title: "Google Cloud, '5 principles for cloud-native architecture'"
+      url: "https://cloud.google.com/blog/products/application-development/5-principles-for-cloud-native-architecture-what-it-is-and-how-to-master-it"
+  file: "BestPractices_CloudNative_2025.md"
+  section: 3
+  instruction: "List reasons to prefer managed services and how to evaluate tradeoffs between managed and self-hosted solutions."
+
+- id: "platform-03"
+  title: "API-First and Extensible Platform Design"
+  description: "Expose platform capabilities through well-documented, stable APIs and service catalogs. Enable extensibility via plugin architectures and integration points for team-specific needs. Version and deprecate APIs in a controlled, transparent manner."
+  tags: ["platform", "api-first", "extensibility", "service-catalog"]
+  area: "Platform Engineering"
+  sources:
+    - title: "CNCF, 'Platform Engineering Principles'"
+      url: "https://www.cncf.io/blog/2023/01/31/the-platform-engineering-principles/"
+  file: "BestPractices_PlatformEngineering_2025.md"
+  section: 3
+  instruction: "Explain how to expose platform capabilities through APIs and catalogs, enable extensibility, and manage API versioning and deprecation."
+
+- id: "systemintegration-03"
+  title: "Data Mapping, Transformation, and Validation"
+  description: "Define and document data mappings between source and target systems. Use transformation tools and middleware to automate data conversion and enrichment. Validate data integrity, format, and business rules at integration boundaries."
+  tags: ["integration", "data-mapping", "transformation", "validation"]
+  area: "System Integration"
+  sources:
+    - title: "MuleSoft, 'Data Transformation Best Practices'"
+      url: "https://blogs.mulesoft.com/dev-guides/api-integration/data-transformation-best-practices/"
+  file: "BestPractices_SystemIntegration_2025.md"
+  section: 3
+  instruction: "Describe how to define and document data mappings, use transformation tools, and validate data integrity and format."
+
+- id: "documentation-04"
+  title: "Use Examples, Code Snippets, and Visuals"
+  description: "Provide practical examples and code snippets to illustrate concepts and usage. Use diagrams, screenshots, and visuals to clarify complex ideas and workflows. Ensure all examples are tested and kept in sync with the codebase."
+  tags: ["documentation", "examples", "visuals", "code-snippets"]
+  area: "Documentation"
+  sources:
+    - title: "Google Developer Documentation Style Guide, 'Examples and Visuals'"
+      url: "https://developers.google.com/style/examples"
+  file: "BestPractices_Documentation_2025.md"
+  section: 4
+  instruction: "Show how to use examples, code snippets, and visuals to clarify documentation, and keep them tested and up to date."
+
+- id: "testing-04"
+  title: "Measure and Improve Test Coverage"
+  description: "Use code coverage tools to measure how much of your codebase is exercised by tests. Aim for high coverage, but focus on meaningful coverage—prioritize critical business logic and error handling. Use mutation testing to assess the effectiveness of your tests."
+  tags: ["testing", "coverage", "mutation-testing", "quality"]
+  area: "Testing"
+  sources:
+    - title: "ThoughtWorks Technology Radar, 'Test Coverage and Mutation Testing'"
+      url: "https://www.thoughtworks.com/radar/techniques"
+  file: "BestPractices_Testing_2025.md"
+  section: 4
+  instruction: "Explain how to measure and improve test coverage, prioritize critical code, and use mutation testing for effectiveness."
+
+- id: "security-02"
+  title: "Integrate Security into CI/CD (DevSecOps)"
+  description: "Integrate security scanning (SAST, DAST, dependency checks) into CI/CD pipelines. Shift security left by educating developers and automating security feedback early. Manage secrets and credentials securely using vaults or pipeline secrets management."
+  tags: ["security", "devsecops", "ci/cd", "automation"]
+  area: "Security"
+  sources:
+    - title: "OWASP, 'DevSecOps Best Practices'"
+      url: "https://owasp.org/www-project-devsecops-best-practices/"
+  file: "BestPractices_DevOps_CICD_2025.md"
+  section: 7
+  instruction: "Describe how to integrate security scanning into CI/CD, shift security left, and manage secrets and credentials securely."
+
+- id: "architecture-03"
+  title: "Scalability and Performance by Design"
+  description: "Design for horizontal scalability and elasticity from the outset. Use asynchronous communication, caching, and partitioning patterns to handle load. Profile and test system performance under realistic and peak scenarios."
+  tags: ["architecture", "scalability", "performance", "asynchronous", "caching"]
+  area: "Architecture"
+  sources:
+    - title: "Microsoft Azure Architecture Center, 'Scalability and Performance'"
+      url: "https://learn.microsoft.com/en-us/azure/architecture/framework/scalability/overview"
+  file: "BestPractices_Architecture_2025.md"
+  section: 3
+  instruction: "List steps to design for scalability and performance, including asynchronous communication, caching, and realistic performance testing."
+
+- id: "devops-03"
+  title: "Version Control and Trunk-Based Development"
+  description: "Use distributed version control systems (e.g., Git) for all code, configuration, and infrastructure. Practice trunk-based development or short-lived feature branches to reduce merge conflicts and integration pain. Enforce code review and automated checks before merging to main/trunk."
+  tags: ["devops", "version-control", "trunk-based", "code-review"]
+  area: "DevOps / CI/CD"
+  sources:
+    - title: "Trunk Based Development, 'Best Practices'"
+      url: "https://trunkbaseddevelopment.com/"
+  file: "BestPractices_DevOps_CICD_2025.md"
+  section: 3
+  instruction: "Describe how to use distributed version control, practice trunk-based development, and enforce code review and automated checks."
+
+- id: "sre-03"
+  title: "Monitoring, Alerting, and Observability"
+  description: "Instrument systems with metrics, logs, and distributed tracing for deep observability. Set up actionable alerts based on SLO violations and meaningful symptoms. Continuously improve monitoring coverage and reduce alert fatigue."
+  tags: ["sre", "monitoring", "observability", "alerting"]
+  area: "SRE"
+  sources:
+    - title: "Google SRE Book, 'Monitoring Distributed Systems'"
+      url: "https://sre.google/sre-book/monitoring-distributed-systems/"
+  file: "BestPractices_SRE_2025.md"
+  section: 3
+  instruction: "Explain how to instrument systems for observability, set up actionable alerts, and reduce alert fatigue."
+
+- id: "cloudnative-04"
+  title: "Practice Defense in Depth"
+  description: "Apply authentication between all components, not just at the perimeter (zero-trust networking). Minimize trust between components, implement rate limiting, and protect against injection and other attacks at every layer. Each component should defend itself from others, making the system resilient and cloud-ready."
+  tags: ["cloud-native", "security", "zero-trust", "defense-in-depth"]
+  area: "Cloud Native"
+  sources:
+    - title: "Google Cloud, '5 principles for cloud-native architecture'"
+      url: "https://cloud.google.com/blog/products/application-development/5-principles-for-cloud-native-architecture-what-it-is-and-how-to-master-it"
+  file: "BestPractices_CloudNative_2025.md"
+  section: 4
+  instruction: "List practical steps for implementing defense in depth in cloud-native systems, including zero-trust and layered security."
+
+- id: "platform-04"
+  title: "Observability, Monitoring, and SLOs for Platforms"
+  description: "Instrument platforms with metrics, logs, and traces for health, usage, and performance. Define and monitor Service Level Objectives (SLOs) for platform services and components. Provide dashboards and alerts to both platform teams and consumers."
+  tags: ["platform", "observability", "monitoring", "slo"]
+  area: "Platform Engineering"
+  sources:
+    - title: "Google SRE Book, 'SLOs for Platform Services'"
+      url: "https://sre.google/sre-book/service-level-objectives/"
+  file: "BestPractices_PlatformEngineering_2025.md"
+  section: 4
+  instruction: "Explain how to instrument platforms for observability, define and monitor SLOs, and provide dashboards and alerts."
+
+- id: "systemintegration-04"
+  title: "Error Handling, Resilience, and Idempotency"
+  description: "Implement robust error handling, retries, and compensation logic for integration failures. Design integrations to be idempotent and support at-least-once delivery semantics where necessary. Monitor for failed transactions and provide tools for manual intervention and replay."
+  tags: ["integration", "error-handling", "resilience", "idempotency"]
+  area: "System Integration"
+  sources:
+    - title: "Microsoft Azure Architecture Center, 'Resilient Integration Patterns'"
+      url: "https://learn.microsoft.com/en-us/azure/architecture/patterns/retry"
+  file: "BestPractices_SystemIntegration_2025.md"
+  section: 4
+  instruction: "Explain how to implement robust error handling, retries, and idempotency in integrations, and monitor for failed transactions."
+
+- id: "documentation-05"
+  title: "Document APIs and Interfaces Clearly"
+  description: "Use standardized formats (e.g., OpenAPI/Swagger, Javadoc, Sphinx) for API documentation. Include endpoint descriptions, request/response schemas, error codes, and usage examples. Generate reference documentation automatically from code comments where possible."
+  tags: ["documentation", "api", "reference", "automation"]
+  area: "Documentation"
+  sources:
+    - title: "OpenAPI Initiative, 'API Documentation Best Practices'"
+      url: "https://www.openapis.org/"
+  file: "BestPractices_Documentation_2025.md"
+  section: 5
+  instruction: "Show how to document APIs and interfaces clearly, using standardized formats and auto-generated reference docs."
+
+- id: "testing-05"
+  title: "Automate Regression and Continuous Integration Testing"
+  description: "Automate regression tests to quickly detect when new changes break existing functionality. Integrate automated tests into CI pipelines so every code change is validated before merging or deployment. Use parallelization and test sharding to speed up feedback cycles."
+  tags: ["testing", "regression", "ci/cd", "automation"]
+  area: "Testing"
+  sources:
+    - title: "Microsoft, 'Automated Testing Best Practices'"
+      url: "https://learn.microsoft.com/en-us/azure/devops/pipelines/test/continuous-test-automation"
+  file: "BestPractices_Testing_2025.md"
+  section: 5
+  instruction: "Explain how to automate regression tests, integrate automated tests into CI pipelines, and use parallelization and test sharding."
+
+- id: "architecture-04"
+  title: "Resilience, Availability, and Fault Tolerance"
+  description: "Design for failure by using redundancy, graceful degradation, and automated recovery mechanisms. Implement circuit breakers, retries, and timeouts for external dependencies. Regularly test failure scenarios (e.g., chaos engineering, game days)."
+  tags: ["architecture", "resilience", "availability", "fault-tolerance", "chaos-engineering"]
+  area: "Architecture"
+  sources:
+    - title: "Netflix Tech Blog, 'Resilience Engineering'"
+      url: "https://netflixtechblog.com/"
+  file: "BestPractices_Architecture_2025.md"
+  section: 4
+  instruction: "Describe how to design for resilience, availability, and fault tolerance, using redundancy, graceful degradation, and automated recovery mechanisms."
+
+- id: "devops-04"
+  title: "Automated Testing and Quality Gates in CI/CD"
+  description: "Integrate automated unit, integration, and end-to-end tests into CI pipelines. Use quality gates (e.g., code coverage, static analysis, security scans) to prevent regressions. Fail fast and provide actionable feedback to developers on test and quality failures."
+  tags: ["devops", "ci/cd", "testing", "quality-gates", "automation"]
+  area: "DevOps / CI/CD"
+  sources:
+    - title: "Google Engineering Practices, 'Test Automation'"
+      url: "https://abseil.io/resources/swe-book/html/ch11.html"
+  file: "BestPractices_DevOps_CICD_2025.md"
+  section: 4
+  instruction: "Explain how to integrate automated testing into CI pipelines, use quality gates, and provide actionable feedback to developers."
+
+- id: "sre-04"
+  title: "Incident Management and Response"
+  description: "Establish clear incident response processes, escalation paths, and communication channels. Automate incident detection, ticketing, and on-call rotations where possible. Conduct blameless postmortems and share learnings to improve resilience."
+  tags: ["sre", "incident-management", "response", "postmortem", "automation"]
+  area: "SRE"
+  sources:
+    - title: "PagerDuty, 'Incident Response Best Practices'"
+      url: "https://www.pagerduty.com/resources/learn/incident-response/"
+  file: "BestPractices_SRE_2025.md"
+  section: 4
+  instruction: "Describe how to establish incident response processes, automate detection, and conduct blameless postmortems."
+
+- id: "cloudnative-05"
+  title: "Embrace Change and Infrastructure as Code"
+  description: "Use Infrastructure as Code (IaC) to make environment changes testable, auditable, and automatable. Design systems to be adaptable to rapid change and continuous improvement."
+  tags: ["cloud-native", "iac", "change-management", "automation"]
+  area: "Cloud Native"
+  sources:
+    - title: "Google Cloud, '5 principles for cloud-native architecture'"
+      url: "https://cloud.google.com/blog/products/application-development/5-principles-for-cloud-native-architecture-what-it-is-and-how-to-master-it"
+  file: "BestPractices_CloudNative_2025.md"
+  section: 5
+  instruction: "Explain how to use Infrastructure as Code for testable, auditable changes, and design systems for adaptability and continuous improvement."
+
+- id: "platform-05"
+  title: "Platform Security, Compliance, and Policy as Code"
+  description: "Integrate security controls, compliance checks, and policy enforcement into platform workflows. Use policy-as-code tools (e.g., OPA, Kyverno) to automate and standardize governance. Regularly audit platform components and dependencies for vulnerabilities."
+  tags: ["platform", "security", "compliance", "policy-as-code"]
+  area: "Platform Engineering"
+  sources:
+    - title: "Open Policy Agent, 'Policy as Code Best Practices'"
+      url: "https://www.openpolicyagent.org/docs/latest/policy-as-code/"
+  file: "BestPractices_PlatformEngineering_2025.md"
+  section: 5
+  instruction: "Explain how to integrate security controls, compliance checks, and policy enforcement into platform workflows, using policy-as-code tools."
+
+- id: "systemintegration-05"
+  title: "Security, Authentication, and Authorization"
+  description: "Secure integrations with strong authentication (e.g., OAuth2, mutual TLS) and role-based access control. Encrypt data in transit and at rest between integrated systems. Regularly audit integration endpoints and credentials for vulnerabilities and compliance."
+  tags: ["integration", "security", "authentication", "authorization"]
+  area: "System Integration"
+  sources:
+    - title: "OWASP, 'Secure Integration Best Practices'"
+      url: "https://owasp.org/www-project-api-security/"
+  file: "BestPractices_SystemIntegration_2025.md"
+  section: 5
+  instruction: "Explain how to secure integrations with strong authentication, role-based access control, and encryption, and regularly audit integration endpoints and credentials."
+
+- id: "documentation-06"
+  title: "Review and Edit Documentation Collaboratively"
+  description: "Establish a peer review process for all major documentation changes to catch errors, improve clarity, and ensure accuracy. Use checklists and style guides to maintain consistency across documents. Encourage feedback from users and stakeholders to continuously improve documentation quality."
+  tags: ["documentation", "review", "editing", "collaboration"]
+  area: "Documentation"
+  sources:
+    - title: "Write the Docs, 'Documentation Review and Editing'"
+      url: "https://www.writethedocs.org/guide/writing/reviewing/"
+  file: "BestPractices_Documentation_2025.md"
+  section: 6
+  instruction: "Explain how to review and edit documentation collaboratively, using peer review, checklists, and style guides, and encouraging feedback from users and stakeholders."
+
+- id: "testing-06"
+  title: "Exploratory and Property-Based Testing"
+  description: "Use exploratory testing to uncover unexpected issues by creatively probing the application beyond scripted test cases. Apply property-based testing to verify that software behaves correctly under a wide range of inputs and conditions, not just specific examples. Encourage testers and developers to collaborate and share findings from exploratory sessions."
+  tags: ["testing", "exploratory-testing", "property-based-testing", "collaboration"]
+  area: "Testing"
+  sources:
+    - title: "ThoughtWorks Technology Radar, 'Exploratory and Property-Based Testing'"
+      url: "https://www.thoughtworks.com/radar/techniques"
+  file: "BestPractices_Testing_2025.md"
+  section: 6
+  instruction: "Describe how to use exploratory and property-based testing to find unexpected issues and verify behavior under varied inputs and conditions."
+
+- id: "agile-01"
+  title: "Iterative, Incremental Delivery and Feedback"
+  description: "Deliver value in small, incremental releases. Use short feedback loops (e.g., sprints, demos, retrospectives) to adapt to change and continuously improve. Prioritize working software and customer collaboration over comprehensive documentation."
+  tags: ["agile", "incremental", "feedback", "continuous-improvement"]
+  area: "Agile"
+  sources:
+    - title: "Agile Alliance, 'Agile Manifesto'"
+      url: "https://agilemanifesto.org/"
+  file: "BestPractices_Agile_2025.md"
+  section: 1
+  instruction: "Show how to deliver value in small, incremental releases, use short feedback loops, and prioritize working software and customer collaboration."
+
+- id: "compliance-01"
+  title: "Maintain Compliance and Regulatory Documentation"
+  description: "Maintain documentation required for compliance (e.g., security controls, audit logs, data handling procedures) as part of the codebase. Use templates and checklists to ensure all regulatory requirements are addressed and kept up to date. Make compliance documentation accessible to relevant stakeholders and auditors."
+  tags: ["compliance", "documentation", "regulatory", "audit"]
+  area: "Compliance"
+  sources:
+    - title: "Microsoft, 'Compliance Documentation Best Practices'"
+      url: "https://learn.microsoft.com/en-us/compliance/regulatory/gdpr/"
+  file: "BestPractices_Documentation_2025.md"
+  section: 12
+  instruction: "Explain how to maintain compliance and regulatory documentation, using templates and checklists, and making it accessible to relevant stakeholders and auditors."
+
+- id: "observability-01"
+  title: "Centralized Logging and Distributed Tracing"
+  description: "Aggregate logs from all components and services in a centralized system. Use distributed tracing to follow requests across services and identify performance bottlenecks. Retain logs for troubleshooting, compliance, and security investigations."
+  tags: ["observability", "logging", "tracing", "monitoring"]
+  area: "Observability"
+  sources:
+    - title: "OpenTelemetry, 'Distributed Tracing Best Practices'"
+      url: "https://opentelemetry.io/docs/concepts/distributed-tracing/"
+  file: "BestPractices_SRE_2025.md"
+  section: 7
+  instruction: "Describe how to aggregate logs, use distributed tracing, and retain logs for troubleshooting, compliance, and security."
+
+- id: "releasemanagement-01"
+  title: "Progressive Delivery and Feature Flags"
+  description: "Release new features gradually using feature flags, canary deployments, and blue-green deployments. Monitor impact and roll back quickly if issues are detected. Use automated deployment pipelines to support safe, repeatable releases."
+  tags: ["release-management", "progressive-delivery", "feature-flags", "canary", "blue-green"]
+  area: "Release Management"
+  sources:
+    - title: "LaunchDarkly, 'Feature Flag Best Practices'"
+      url: "https://launchdarkly.com/blog/feature-flag-best-practices/"
+  file: "BestPractices_DevOps_CICD_2025.md"
+  section: 8
+  instruction: "Explain how to use feature flags, canary and blue-green deployments, and automated pipelines for safe, repeatable releases."
+
+- id: "architecture-05"
+  title: "Document Architecture Decisions (ADRs)"
+  description: "Document key architectural decisions, including context, alternatives considered, rationale, and consequences. Use lightweight, version-controlled ADRs (e.g., Markdown files in the code repository) to ensure decisions are transparent and traceable. Link ADRs from related documentation and keep them updated as architecture evolves."
+  tags: ["architecture", "documentation", "adr", "decision-records"]
+  area: "Architecture"
+  sources:
+    - title: "Michael Nygard, 'Documenting Architecture Decisions'"
+      url: "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions.html"
+  file: "BestPractices_Architecture_2025.md"
+  section: 5
+  instruction: "Show how to document architecture decisions using ADRs, including context, alternatives, rationale, and consequences, and keep them updated."
