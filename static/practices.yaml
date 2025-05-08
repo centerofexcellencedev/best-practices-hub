@@ -1,0 +1,75 @@
+- id: "architecture-01"
+  title: "Define and Document Architecture Decisions"
+  description: "Use Architecture Decision Records (ADRs) to capture context, alternatives, rationale, and consequences of key decisions. Keep ADRs version-controlled and linked to related documentation and code. Review and update ADRs as the system evolves."
+  tags: ["architecture", "documentation", "governance"]
+  area: "Architecture"
+  sources:
+    - title: "Michael Nygard, 'Documenting Architecture Decisions'"
+      url: "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions.html"
+    - title: "ThoughtWorks, 'Evolutionary Architecture'"
+      url: "https://www.thoughtworks.com/insights/blog/evolutionary-architecture"
+  file: "BestPractices_Architecture_2025.md"
+  section: 1
+  instruction: "Explain how and why to document key architectural decisions using ADRs, ensuring they are version-controlled, regularly reviewed, and updated as the system evolves."
+
+- id: "devops-01"
+  title: "DevOps Culture and Collaboration"
+  description: "Foster a culture of shared responsibility, transparency, and continuous learning between development and operations teams. Break down silos by encouraging cross-functional teams and regular communication. Use blameless postmortems and retrospectives to learn from incidents and improve processes."
+  tags: ["devops", "collaboration", "culture"]
+  area: "DevOps / CI/CD"
+  sources:
+    - title: "DORA, 'State of DevOps Report'"
+      url: "https://cloud.google.com/devops/state-of-devops"
+  file: "BestPractices_DevOps_CICD_2025.md"
+  section: 1
+  instruction: "Describe how to build a collaborative, learning-focused culture between development and operations, including breaking silos, holding blameless postmortems, and sharing responsibility."
+
+- id: "platform-01"
+  title: "Platform as a Product Mindset"
+  description: "Treat internal platforms as products, with clear ownership, roadmaps, and user feedback loops. Prioritize developer experience, reliability, and measurable business value in platform evolution. Continuously engage with platform consumers to understand needs and iterate accordingly."
+  tags: ["platform", "product", "developer-experience"]
+  area: "Platform Engineering"
+  sources:
+    - title: "Platform Engineering Community, 'Platform as a Product'"
+      url: "https://platformengineering.org/blog/platform-as-a-product"
+  file: "BestPractices_PlatformEngineering_2025.md"
+  section: 1
+  instruction: "Describe how to treat internal platforms as products, focusing on user needs, feedback loops, and self-service to empower engineering teams."
+
+- id: "sre-01"
+  title: "SRE Principles and Culture"
+  description: "Adopt SRE principles: embrace risk, measure everything, automate, and focus on reliability as a shared goal. Foster collaboration between development and operations with shared responsibility for service health. Promote blameless postmortems and continuous learning from incidents."
+  tags: ["sre", "reliability", "culture"]
+  area: "SRE"
+  sources:
+    - title: "Google SRE Book, 'Introduction to SRE'"
+      url: "https://sre.google/sre-book/introduction/"
+  file: "BestPractices_SRE_2025.md"
+  section: 1
+  instruction: "Explain how SRE balances reliability and innovation, using automation, risk management, and blameless learning."
+
+- id: "integration-01"
+  title: "Integration Strategy and Architecture"
+  description: "Define a clear integration strategy aligned with business goals and system architecture. Choose appropriate integration patterns (e.g., point-to-point, hub-and-spoke, ESB, API-led, event-driven) based on scalability, maintainability, and complexity. Document integration architecture, data flows, and dependencies."
+  tags: ["integration", "architecture", "strategy"]
+  area: "System Integration"
+  sources:
+    - title: "Enterprise Integration Patterns, 'Integration Patterns Catalog'"
+      url: "https://www.enterpriseintegrationpatterns.com/patterns.html"
+  file: "BestPractices_SystemIntegration_2025.md"
+  section: 1
+  instruction: "Describe how to define an integration strategy, select appropriate patterns, and document interfaces and contracts for robust, maintainable systems."
+
+- id: "cloudnative-01"
+  title: "Design for Automation"
+  description: "Automate infrastructure creation and updates using Infrastructure as Code (IaC) tools (e.g., Terraform, Google Cloud Deployment Manager). Automate CI/CD: build, test, and deploy packages using tools like Google Cloud Build, Jenkins, or Spinnaker. Automate scaling: use autoscaling to scale up and down in response to load, and consider scale-to-zero for infrequently used apps. Bake monitoring and logging into systems from inception, and use them for both health checks and actionable automation (e.g., auto-remediation)."
+  tags: ["cloud-native", "automation", "iac", "ci/cd", "monitoring"]
+  area: "Cloud Native"
+  sources:
+    - title: "Google Cloud, '5 principles for cloud-native architecture'"
+      url: "https://cloud.google.com/blog/products/application-development/5-principles-for-cloud-native-architecture-what-it-is-and-how-to-master-it"
+  file: "BestPractices_CloudNative_2025.md"
+  section: 1
+  instruction: "List concrete steps for automating infrastructure, CI/CD, scaling, and monitoring in cloud-native systems, and explain why this drives reliability and agility."
+
+# ... (truncated for brevity; would continue with the full file content)

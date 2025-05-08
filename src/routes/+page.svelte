@@ -129,7 +129,7 @@ function toggleSidebar() {
 
 onMount(async () => {
   try {
-    const res = await fetch(`${base}/src/lib/data/practices.yaml`);
+    const res = await fetch(`${base}/practices.yaml`);
     const text = await res.text();
     practices = YAML.parse(text) as Practice[];
     areas = unique(practices.map((p) => p.area));
