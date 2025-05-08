@@ -4,9 +4,17 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 const config = {
 	preprocess: [vitePreprocess(), mdsvex()],
-	kit: { adapter: adapter({
-		fallback: '200.html' // may differ from host to host
-	}) },
+	kit: {
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: 'index.html', // SPA routing for GitHub Pages
+			precompress: false
+		}),
+		paths: {
+			base: process.env.NODE_ENV === 'production' ? '/best-practices-hub' : ''
+		}
+	},
 	extensions: ['.svelte', '.svx']
 };
 
