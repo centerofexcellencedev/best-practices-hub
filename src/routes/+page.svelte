@@ -1,6 +1,7 @@
 <script lang="ts">
 import { onMount } from 'svelte';
 import YAML from 'yaml';
+import { base } from '$app/paths';
 
 interface Practice {
   id: string;
@@ -55,8 +56,8 @@ function openModal(practice: Practice) {
   selectedPractice = practice;
   showModal = true;
   setTimeout(() => {
-    const modal = document.getElementById('practice-modal');
-    if (modal) modal.focus();
+    const closeBtn = document.querySelector('#practice-modal button[aria-label="Close"]');
+    if (closeBtn) (closeBtn as HTMLElement).focus();
   }, 0);
 }
 
@@ -128,7 +129,7 @@ function toggleSidebar() {
 
 onMount(async () => {
   try {
-    const res = await fetch('/src/lib/data/practices.yaml');
+    const res = await fetch(`${base}/src/lib/data/practices.yaml`);
     const text = await res.text();
     practices = YAML.parse(text) as Practice[];
     areas = unique(practices.map((p) => p.area));
@@ -159,7 +160,15 @@ onMount(async () => {
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
   </button>
   {#if sidebarOpen}
-    <div class="fixed inset-0 z-40 bg-black bg-opacity-40" role="presentation" tabindex="0" on:click={() => sidebarOpen = false} on:keydown={(e) => e.key === 'Escape' && (sidebarOpen = false)}></div>
+    <div
+      class="fixed inset-0 z-40 bg-black bg-opacity-40"
+      role="button"
+      aria-label="Close sidebar"
+      tabindex="0"
+      on:click={() => sidebarOpen = false}
+      on:keydown={(e) => (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') && (sidebarOpen = false)}
+      style="cursor: pointer;"
+    ></div>
     <nav class="fixed top-0 left-0 z-50 bg-gray-100 border-r w-64 p-6 h-full shadow-lg">
       <div class="mb-4 font-bold text-lg">Areas</div>
       <ul class="space-y-2">
@@ -237,8 +246,23 @@ onMount(async () => {
     {/if}
 
     {#if showModal && selectedPractice}
-      <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40" role="dialog" aria-modal="true" aria-label="Practice Details" tabindex="-1" on:click={closeModal} on:keydown={handleKeydown}>
-        <div id="practice-modal" class="bg-white rounded-lg shadow-lg max-w-xl w-full p-8 relative" role="document" on:click|stopPropagation>
+      <div
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40"
+        role="presentation"
+        aria-hidden="true"
+        on:click={closeModal}
+        style="cursor: pointer;"
+      >
+        <div
+          id="practice-modal"
+          class="bg-white rounded-lg shadow-lg max-w-xl w-full p-8 relative"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Practice Details"
+          tabindex="0"
+          on:click|stopPropagation
+          on:keydown={(e) => e.key === 'Escape' && closeModal()}
+        >
           <button class="absolute top-3 right-3 text-gray-500 hover:text-black text-xl" aria-label="Close" on:click={closeModal}>&times;</button>
           <h2 class="text-2xl font-bold mb-2">{selectedPractice.title}</h2>
           <div class="mb-3 text-gray-600">{selectedPractice.description}</div>
